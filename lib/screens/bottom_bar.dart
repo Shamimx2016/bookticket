@@ -38,12 +38,14 @@ class _BottomBarState extends State<BottomBar> {
         child: _widgetOptions[_SelectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _SelectedIndex,
         onTap: _onItemTapped,
         elevation: 10,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.blueGrey,
         unselectedItemColor: const Color(0XFF526480),
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(FluentSystemIcons.ic_fluent_home_regular),
