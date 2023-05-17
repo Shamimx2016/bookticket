@@ -4,6 +4,8 @@ import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import 'hotel_screen.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -95,13 +97,55 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
             child: Row(
               children: [
+                TicketView(),
+                TicketView(),
+                TicketView(),
                 TicketView(),
                 TicketView(),
               ],
             ),
           ),
+          const Gap(15),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Hotels",
+                  style: Styles.headlinestyle2,
+                ),
+                InkWell(
+                  onTap: () {
+                    print('tapped');
+                  },
+                  child: Text(
+                    "View all",
+                    style:
+                        Styles.textStyle.copyWith(color: Styles.primaryColor),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const Gap(15),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: [
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
+                HotelScreen(),
+              ],
+            ),
+          ),
+          const Gap(15),
         ],
       ),
     );
